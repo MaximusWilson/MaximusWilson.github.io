@@ -1,6 +1,10 @@
 html, body {
   margin: 0;
   padding: 0;
+  color: #03d800;
+}
+p{
+color: #000000;
 }
 canvas {
   display: block;
