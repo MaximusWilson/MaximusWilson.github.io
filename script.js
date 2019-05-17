@@ -4,6 +4,7 @@ var arraySize = (gridX*gridY)
 var mines = []
 var safe = []
 var flag = []
+var flag_off = []
 function setup() {
   createCanvas(gridX * 30 + 1, gridY * 30 + 1);
   background(3, 216, 0);
@@ -61,6 +62,12 @@ function draw() {
         fill(150, 0, 0);
       }
     });
+    flag_off.forEach(b => {
+      if (i == b){
+        fill(3, 216, 0);
+        flag_off.splice(flag_off.indexOf(b), 1);
+      }
+    });
     rect(x, y, cellWidth, cellWidth);
     noFill();
     //fill(3, 216, 0);
@@ -81,6 +88,7 @@ function mouseClicked(){
     flag.forEach(b => {
       if (b == pos){
         flag.splice(flag.indexOf(b), 1);
+        flag_off.push(b);
         x = 1;
       }
     });
@@ -99,6 +107,7 @@ function mouseClicked(){
     });
     
     if (x == 0){
+      
       let num_mine = 0;
       mines.forEach(b => {
         if (b == pos){
@@ -121,19 +130,18 @@ function mouseClicked(){
         }if (b == (pos + 1) && pos % 18 != 17){
           num_mine = num_mine + 1;
         }
-        //if (num_mine != 0){
-          
-        //}
       });
+      
       let num_mine_str = num_mine.toString();
-      fill(50);
-      noStroke();
-      textAlign(CENTER, TOP);
-      textSize(30);
-      text(num_mine_str, ((floor(mouseX / 30)) * 30) + 15.5, ((floor(mouseY / 30)) * 30) + 2.5);
-      stroke(0);
-      noFill();
-      //fill(3, 216, 0);
+      if (num_mine != 0){
+        fill(50);
+        noStroke();
+        textAlign(CENTER, TOP);
+        textSize(30);
+        text(num_mine_str, ((floor(mouseX / 30)) * 30) + 15, ((floor(mouseY / 30)) * 30));
+        stroke(0);
+        noFill();
+      }
       console.log(num_mine.toString())
     }
   }
