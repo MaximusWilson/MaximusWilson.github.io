@@ -8,23 +8,22 @@
     <meta charset="utf-8" />
     <title>Elan Max website</title>
   </head>
-                                                      <style>
-                                                      ul {
-        list-style-type: none;
+    <style>
+      .navbar {
         margin: 0;
         padding: 0;
         overflow: hidden;
-      }
-      li{
         float: left;
+        background-color: #333
       }
-      li a {
+
+      .navbar a {
         display: block;
+        display: inline;
         color:white;
         text-align: center;
         padding: 14px 16px ;
         text-decoration: none;
-        background-color: #333
 
 
 
@@ -38,20 +37,54 @@
 
       }
 
-                                                      </style>
-    </head>
-    <ul>
-      <li><a href="https://MaximusWilson.github.io">Home</a></li>
-      <li><a href="https://elan-max-final.glitch.me/">Minesweeper</a></li>
-      <li><a href="https://screeching-hardhat.glitch.me">FBI??</a></li>
-      <li><a href="https://clock-final.glitch.me">Time until summer!!</a><li>
-      <li><a href="mailto:maximuswilson@students.berkeley.net">Contact us</a></li>
+  .dropdown .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  }
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+.dropdown-content a:hover {background-color: #ddd;}
+.dropdown:hover .dropdown-content {display: block;}
 
+      </style>
+    </head>
     <body style = "background: url(http://www.wallpaperaholic.com/images/9/tVKuLFJF.jpg)">
-  <body>
-    <h1> Elan and Max's CS Semster 2 Final </h1>
-  <body>
-    <p>This is our final!!!</p>
+      <h1> Elan and Max's CS Semster 2 Final </h1>
+      <p>This is our final!!!</p><div class ="navbar">
+      <a href="https://MaximusWilson.github.io">Home</a>
+      <a href="https://elan-max-final.glitch.me/">Minesweeper</a>
+      <a href="https://screeching-hardhat.glitch.me">FBI??</a>
+      <a href="https://clock-final.glitch.me">Time until summer!!</a>
+      <a href="mailto:maximuswilson@students.berkeley.net">Contact us</a>
+      <div class="dropdown">
+        <button class="dropbtn">Extras
+        </button>
+        <div class="dropdown-content">
+          <a href="Time Until summer!!">https://clock-final.glitch.me</a>
+          <a href="Fbi">https://screeching-hardhat.glitch.me</a>
+        </div>
+      </div>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
